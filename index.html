@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+      .player-container {
+        display: flex;
+        flex-direction: column;
+        width: 800px;
+        height: 600px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.8);
+      }
+
+      .video-container {
+        display: flex;
+        flex-grow: 1;
+      }
+
+      .control-panel {
+        display: flex;
+        background-color: black;
+        padding: 10px 5px 10px 5px;
+      }
+
+      .player-button {
+        background-color: transparent;
+        border-style: none;
+        cursor: pointer;
+        width: 28px;
+        margin-right: 8px;
+      }
+      .player-button:last-child {
+        margin-right: unset;
+      }
+
+      .empty-space {
+        display: flex;
+        flex-grow: 1;
+      }
+
+      .button-icon {
+        color: white;
+        font-size: 15pt;
+      }
+    </style>
+
+    <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+
+    <title>Плеер</title>
+  </head>
+
+  <body>
+    <div id="player" class="player-container">
+      <div class="js-video-container video-container"></div>
+
+      <div class="control-panel">
+        <button class="js-play-button player-button" type="button" name="play-button">
+          <i class="fa fa-play button-icon" aria-hidden="true"></i>
+        </button>
+        <button class="js-pause-button player-button" type="button" name="pause-button" hidden>
+          <i class="fa fa-pause button-icon" aria-hidden="true"></i>
+        </button>
+
+        <button class="js-volume-button player-button" type="button" name="volume-button">
+          <i class="fa fa-volume-off button-icon" aria-hidden="true"></i>
+        </button>
+        <button class="js-mute-button player-button" type="button" name="mute-button" hidden>
+          <i class="fa fa-volume-up button-icon" aria-hidden="true"></i>
+        </button>
+        <div class="empty-space"></div>
+
+        <button class="js-fullscreen-button player-button" type="button" name="fullscreen-button">
+          <i class="fa fa-expand button-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
+    <script src="player.js"></script>
+
+    <script type="text/javascript">
+      createPlayer({elementId: 'player'});
+    </script>
+
+  </body>
+</html>
