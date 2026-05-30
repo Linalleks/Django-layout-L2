@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <style type="text/css">
       .player-container {
@@ -29,13 +30,23 @@
         border-style: none;
         cursor: pointer;
         width: 28px;
-        margin-right: 8px;
+        margin-right: 7px;
       }
       .player-button:last-child {
         margin-right: unset;
+        margin-left: 4px;        
       }
 
-      .empty-space {
+      .video-time {
+        display: flex;
+        flex-grow: 1;
+        color: white;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        padding-top: 1px;
+      }
+
+      .progress-line {
         display: flex;
         flex-grow: 1;
       }
@@ -74,7 +85,11 @@
         <button class="js-mute-button player-button" type="button" name="mute-button" hidden>
           <i class="fa fa-volume-up button-icon" aria-hidden="true"></i>
         </button>
-        <div class="empty-space"></div>
+        <div class="video-time">
+          <span class="js-current-time"></span>
+          <div class="progress-line"></div>
+          <span class="js-duration"></span>
+        </div>
 
         <button class="js-fullscreen-button player-button" type="button" name="fullscreen-button">
           <i class="fa fa-expand button-icon" aria-hidden="true"></i>
