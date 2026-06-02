@@ -75,9 +75,20 @@
         display: inline-block;
         position: relative;
         z-index: 999;
-        border: 3.5px solid white;        
+        border: 3px solid white;        
         margin-left: -6.5px;
         box-shadow: -1px 0px 6px 1px rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        transition-property: opacity;
+        transition-duration: 300ms;
+        transition-timing-function: ease-out;
+      }
+
+      .control-panel:hover .slider {
+        opacity: 1;
+        transition-property: opacity;
+        transition-duration: 300ms;
+        transition-timing-function: ease-in;
       }
 
     </style>
