@@ -37,24 +37,49 @@
         margin-left: 4px;        
       }
 
+      .button-icon {
+        color: white;
+        font-size: 15pt;
+      }
+
       .video-time {
         display: flex;
         flex-grow: 1;
+        align-items: center;
         color: white;
         font-family: "Roboto", sans-serif;
         font-weight: 400;
-        padding-top: 1px;
       }
 
       .progress-line {
         display: flex;
         flex-grow: 1;
+        align-items: center;
+        border-radius: 50%;
+        height: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
       }
 
-      .button-icon {
-        color: white;
-        font-size: 15pt;
+      .progress-slider {
+        background-color: #f8104d;
+        height: 5px;
+        border-radius: 2px;
       }
+
+      .slider {
+        height: 8px;
+        width: 8px;
+        background-color: #f8104d;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        z-index: 999;
+        border: 3.5px solid white;        
+        margin-left: -6.5px;
+        box-shadow: -1px 0px 6px 1px rgba(0, 0, 0, 0.8);
+      }
+
     </style>
 
     <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
@@ -87,7 +112,10 @@
         </button>
         <div class="video-time">
           <span class="js-current-time"></span>
-          <div class="progress-line"></div>
+          <div class="js-progress progress-line">
+            <div class="js-progress-slider progress-slider"></div>
+            <span class="slider"></span>
+          </div>
           <span class="js-duration"></span>
         </div>
 
